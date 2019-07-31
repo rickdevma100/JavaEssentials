@@ -19,4 +19,12 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
 		return  new ResponseEntity<Object>(error, HttpStatus.NOT_FOUND);
 		
 	}
+	
+	@ExceptionHandler(OrderNotFoundException.class)
+	public final ResponseEntity<Object> handleOrderExceptionCustom(Exception ex, WebRequest request){
+			
+		ErrorMessage error=new ErrorMessage(new Date(),ex.getMessage(), request.getDescription(false)); 
+		return  new ResponseEntity<Object>(error, HttpStatus.NOT_FOUND);
+		
+	}
 }

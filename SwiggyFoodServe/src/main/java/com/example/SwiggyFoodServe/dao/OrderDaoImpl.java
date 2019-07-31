@@ -66,8 +66,16 @@ public class OrderDaoImpl {
 				.stream()
 				.filter(x->x.getOrderId()==id)
 				.map(x->x)
-				.findFirst();		
-		return order.get();
+				.findFirst();	
+		
+		if(order.isPresent()){
+			
+			return order.get();
+		}else{
+			
+			return null;
+		}
+		
 	}
 	
 	public String orderTrackingDetails(long id, int index){
