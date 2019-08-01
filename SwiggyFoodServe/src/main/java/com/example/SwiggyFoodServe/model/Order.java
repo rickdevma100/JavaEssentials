@@ -8,6 +8,7 @@ public class Order {
 	private Restaurant resteurant;
 	private OrderTracking track;
 	private APPRECIATION appreciation;
+	private Customer customer;
 	
 	public Order(){
 		
@@ -15,7 +16,7 @@ public class Order {
 	}
 	
 	public Order(Long orderId, String orderName, ORDERSTATUS orderStatus, Restaurant resteurant, OrderTracking track,
-			APPRECIATION appreciation) {
+			APPRECIATION appreciation, Customer customer) {
 		super();
 		this.orderId = orderId;
 		this.orderName = orderName;
@@ -23,6 +24,7 @@ public class Order {
 		this.resteurant = resteurant;
 		this.track = track;
 		this.appreciation = appreciation;
+		this.setCustomer(customer);
 	}
 	/**
 	 * @return the orderId
@@ -96,6 +98,20 @@ public class Order {
 	 */
 	public void setAppreciation(APPRECIATION appreciation) {
 		this.appreciation = appreciation;
+	}
+
+	/**
+	 * @return the customer
+	 */
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	/**
+	 * @param customer the customer to set
+	 */
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
 		
 }

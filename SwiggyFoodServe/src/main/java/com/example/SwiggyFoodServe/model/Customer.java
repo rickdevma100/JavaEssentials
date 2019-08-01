@@ -5,20 +5,17 @@ public class Customer {
 	private Long custID;
 	private String customerName;
 	private String address;
-	private Order order;
 	
-	/**
-	 * @return the order
-	 */
-	public Order getOrder() {
-		return order;
+	
+	
+	public Customer(Long custID, String customerName, String address) {
+		super();
+		this.custID = custID;
+		this.customerName = customerName;
+		this.address = address;
+		
 	}
-	/**
-	 * @param order the order to set
-	 */
-	public void setOrder(Order order) {
-		this.order = order;
-	}
+	
 	/**
 	 * @return the custID
 	 */

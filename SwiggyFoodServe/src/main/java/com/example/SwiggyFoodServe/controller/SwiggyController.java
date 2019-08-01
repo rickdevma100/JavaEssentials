@@ -39,6 +39,12 @@ public class SwiggyController {
 
     }
 	
+	@GetMapping(path="/customer/{id}/orders")
+    public List<Order> getOrdersCustomer(@PathVariable long id) {
+		logger.info("Get All order Details for cusomer with Id : "+id);
+		return orderImpl.orderDetailsCustomerWise(id);
+    }
+	
 	@GetMapping(path="/order/{id}")
     public Order getOrder(@PathVariable long id) {
 		logger.info("Get Order Details for "+id);		
